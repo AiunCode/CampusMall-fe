@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-25 00:19:15
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-25 00:19:30
+ * @LastEditTime: 2021-04-25 18:16:17
  * @Description: file content
  */
 'use strict';
@@ -16,7 +16,7 @@ var navSide = {
         navList: [
             { name: 'user-center', desc: '个人中心', href: './user-center.html' },
             { name: 'order-list', desc: '我的订单', href: './order-list.html' },
-            { name: 'pass-update', desc: '修改密码', href: './pass-update.html' },
+            { name: 'user-pass-update', desc: '修改密码', href: './user-pass-update.html' },
             { name: 'about', desc: '关于CampusMall', href: './about.html' }
         ]
     },

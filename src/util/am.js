@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-24 23:15:33
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-24 23:32:13
+ * @LastEditTime: 2021-04-25 15:42:10
  * @Description: file content
  */
 'use strict'
@@ -81,7 +81,7 @@ var _am = {
     //统一登录处理
     doLogin: function () {
         //登录完成后跳回到原来的页面
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     //跳回主页
     goHome: function () {

@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-24 23:38:32
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-25 00:40:47
+ * @LastEditTime: 2021-04-25 17:29:51
  * @Description: file content
  */
 
@@ -47,7 +47,7 @@ input[type='checkbox'] {
     font-size: 14px;
     color: #666;
     font-weight: bold;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
 }
 .panel .panel-body{
     padding: 10px;

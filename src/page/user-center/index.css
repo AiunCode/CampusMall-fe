@@ -1,0 +1,17 @@
+/*
+ * @Author: aiun
+ * @Date: 2021-04-25 17:01:47
+ * @LastEditors: aiun
+ * @LastEditTime: 2021-04-25 17:02:09
+ * @Description: file content
+ */
+.form-line{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+.form-line .label{
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+}

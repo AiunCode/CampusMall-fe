@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-24 15:46:22
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-25 10:30:25
+ * @LastEditTime: 2021-04-25 18:11:19
  * @Description: file content
  */
 var webpack = require('webpack');
@@ -30,10 +30,18 @@ var config = {
     //打包入口文件
     //多页面应用程序
     entry: {
-        common: ['./src/page/common/index.js'],
-        index: ['./src/page/index/index.js'],
-        login: ['./src/page/login/index.js'],
-        result: ['./src/page/result/index.js']
+        'common'            : ['./src/page/common/index.js'],
+        'index'             : ['./src/page/index/index.js'],
+        // 'list'              : ['./src/page/list/index.js'],
+        // 'detail'            : ['./src/page/detail/index.js'],
+        // 'cart'              : ['./src/page/cart/index.js'],
+        'user-login'        : ['./src/page/user-login/index.js'],
+        'user-register'     : ['./src/page/user-register/index.js'],
+        'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
+        'user-center'       : ['./src/page/user-center/index.js'],
+        'user-center-update': ['./src/page/user-center-update/index.js'],
+        'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
+        'result'            : ['./src/page/result/index.js']
     },
     //输出路径
     //多个入口输出
@@ -83,7 +91,15 @@ var config = {
         new ExtractTextPlugin("css/[name].css"),
         //该插件将生成一个HTML文件，该文件将使用脚本标记将webpack捆绑包全部包含在正文中。
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('login', '用户登录')),
+        // new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
+        // new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
+        // new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
         new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
     ]
 };

@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-25 00:04:26
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-25 00:04:54
+ * @LastEditTime: 2021-04-25 16:21:29
  * @Description: file content
  */
 'use strict'
@@ -20,20 +20,20 @@ var nav = {
         return this;
     },
     bindEvent: function () {
-        //登录点击事件
+        // 登录点击事件
         $('.js-login').click(function () {
             _am.doLogin();
         });
-        //注册点击事件
-        $('js-register').click(function () {
+        // 注册点击事件
+        $('.js-register').click(function () {
             window.location.href = './user-register.html';
         });
-        //退出点击事件
+        // 退出点击事件
         $('.js-logout').click(function () {
             _user.logout(function (res) {
                 window.location.reload();
             }, function (errMsg) {
-                _am.errorTips(errMsg);
+                _mm.errorTips(errMsg);
             });
         });
     },

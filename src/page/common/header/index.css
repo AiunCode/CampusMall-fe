@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-25 00:11:10
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-25 00:11:58
+ * @LastEditTime: 2021-04-25 17:21:24
  * @Description: file content
  */
 /* 通用头部导航 */
@@ -35,4 +35,15 @@
     position: absolute;
     height: 44px;
     width: 80px;    
+}
+
+/* 面包屑导航 */
+.crumb{
+    margin-bottom: 15px;
+    height: 50px;
+    line-height: 50px;
+    background: #eee;
+    color: #888;
+    font-size: 14px;
+    border-top: 2px solid #FF4200;
 }
