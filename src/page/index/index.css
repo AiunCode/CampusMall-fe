@@ -2,9 +2,131 @@
  * @Author: aiun
  * @Date: 2021-04-24 17:26:13
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-24 23:57:29
+ * @LastEditTime: 2021-04-25 22:11:38
  * @Description: file content
  */
-body{
-     background: rgb(17, 201, 93);
+/* keywords-list */
+/* 商品种类列表 */
+.keywords-list{
+    float: left;
+    width: 236px;
+    height: 350px;
+    padding: 10px 0;
+    margin-right: 10px;
+    background: #fff;
+    color: #eee;
+    border: 2px solid #FF4200;
+}
+.keywords-list .keywords-item{
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+}
+.keywords-list .keywords-item:hover{
+    background: rgb(240, 172, 172);
+}
+.keywords-list .keywords-item .link{
+    margin-right: 6px;
+    color: rgb(15, 15, 15);
+}
+.keywords-list .keywords-item .link:hover{
+    color: #f70a0a;
+}
+
+/* banner-con */
+/* 分类右侧内容 */
+.banner-con{
+    width: 830px;
+    float: left;
+    height: 370px;
+    background: #eee;
+}
+.banner-con .loading{
+    margin-top: 150px;
+}
+.banner-con .banner-img{
+    width: 100%;
+    height: 370px;
+}
+/* banner的前一张和后一张按钮 */
+.banner-con .banner-arrow{
+    position: absolute; 
+    top:160px;
+    width: 30px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    background: #ccc;
+    background: rgba(0,0,0,.2);
+    cursor: pointer;
+}
+.banner-con .banner-arrow:hover{
+    background: #aaa;
+    background: rgba(0,0,0,.5);
+}
+.banner-con .banner-arrow.prev{
+    left: 0;
+}
+.banner-con .banner-arrow.next{
+    right: 0;
+}
+/* floor */
+.floor-wrap .floor-title{
+    height: 50px;
+    line-height: 50px;
+    color: #FF4200;
+    font-weight: normal;
+    font-size: 20px;
+    border-bottom: 2px solid #FF4200;
+}
+/* 更改各楼层标题颜色 */
+.floor-wrap:nth-child(2) .floor-title{
+    color: #1ec1d6;
+    border-bottom: 2px solid #1ec1d6;
+}
+.floor-wrap:nth-child(3) .floor-title{
+    color: #bdba36;
+    border-bottom: 2px solid #bdba36;
+}
+.floor-wrap:nth-child(4) .floor-title{
+    color: #53b6e7;
+    border-bottom: 2px solid #53b6e7;
+}
+.floor-wrap:nth-child(5) .floor-title{
+    color: #e013dd;
+    border-bottom: 2px solid #e013dd;
+}
+.floor-wrap .floor-list{
+    margin-right: -20px;
+    overflow: hidden;
+}
+.floor-wrap .floor-list .floor-item{
+    position: relative;
+    width: 200px;
+    height: 220px;
+    margin: 15px 20px 15px 0;
+    float: left;
+    cursor: pointer;
+    background: #fff;
+}
+.floor-wrap .floor-list .floor-item:hover{
+    box-shadow: 1px 1px 7px #ddd;
+}
+.floor-wrap .floor-list .floor-item .floor-text{
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    font-size: 16px;
+    color: #555;
+}
+.floor-wrap .floor-list .floor-item .floor-img{
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    width: 80%;
+    height: 75%;
+    border: none;
 }
