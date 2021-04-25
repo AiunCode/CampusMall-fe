@@ -1,0 +1,28 @@
+/*
+ * @Author: aiun
+ * @Date: 2021-04-25 00:18:35
+ * @LastEditors: aiun
+ * @LastEditTime: 2021-04-25 00:19:04
+ * @Description: file content
+ */
+/* 导航主体 */
+.nav-side{
+    float: left;
+    width: 130px;
+    min-height: 100px;
+}
+.nav-side .nav-item{
+    line-height: 32px;
+    font-size: 14px;
+}
+.nav-side .nav-item .link{
+    color: #888;
+}
+.nav-side .nav-item.active .link{
+    color: #FF4200;
+}
+/* 右侧内容区 */
+.content.with-nav{
+    float: left;
+    width: 950px;
+} 

@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-24 15:46:22
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-24 22:32:37
+ * @LastEditTime: 2021-04-25 10:30:25
  * @Description: file content
  */
 var webpack = require('webpack');
@@ -13,12 +13,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 
 // 获取html-webpack-plugin参数的方法 
-var getHtmlConfig = function (name) {
+var getHtmlConfig = function (name, title) {
     return {
         //原始模板
         template: './src/view/' + name + '.html',
         //打包后的文件
         filename: 'view/' + name + '.html',
+        title: title,
         inject: true,
         hash: true,
         chunks: ['common', name]
@@ -31,7 +32,8 @@ var config = {
     entry: {
         common: ['./src/page/common/index.js'],
         index: ['./src/page/index/index.js'],
-        login: ['./src/page/login/index.js']
+        login: ['./src/page/login/index.js'],
+        result: ['./src/page/result/index.js']
     },
     //输出路径
     //多个入口输出
@@ -57,7 +59,19 @@ var config = {
             },
             //处理图片和字体资源（icon）
             { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
+            //处理后缀名为string的文件
+            { test: /\.string$/, loader: 'html-loader' }
         ]
+    },
+    //通过别名来把原导入路径映射成一个新的导入路径
+    resolve: {
+        alias: {
+            node_modules: __dirname + '/node_modules',
+            util: __dirname + '/src/util',
+            page: __dirname + '/src/page',
+            image: __dirname + '/src/image',
+            service: __dirname + '/src/service'
+        },
     },
     plugins: [
         //抽取公共模块
@@ -68,8 +82,9 @@ var config = {
         //把css文件单独打包
         new ExtractTextPlugin("css/[name].css"),
         //该插件将生成一个HTML文件，该文件将使用脚本标记将webpack捆绑包全部包含在正文中。
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login'))
+        new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('login', '用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
     ]
 };
 

@@ -1,0 +1,31 @@
+/*
+ * @Author: aiun
+ * @Date: 2021-04-25 00:03:45
+ * @LastEditors: aiun
+ * @LastEditTime: 2021-04-25 00:04:19
+ * @Description: file content
+ */
+.nav{
+    background: #eee;
+    height: 30px;
+    line-height: 30px;
+}
+/* 用户部分 */
+.nav .user{
+    float: left;
+}
+/* 没有空格表示同一个元素 */
+.nav .user.login{
+    display: none;
+}
+.nav .user .link{
+    margin-right: 10px;
+}
+/* 导航链接部分 */
+.nav .nav-list{
+    float: right;
+}
+.nav .nav-list .nav-item{
+    display: inline-block;
+    margin-left: 10px;
+}
