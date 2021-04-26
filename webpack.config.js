@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-24 15:46:22
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-26 00:00:57
+ * @LastEditTime: 2021-04-26 00:57:08
  * @Description: file content
  */
 var webpack = require('webpack');
@@ -34,7 +34,7 @@ var config = {
         'index'             : ['./src/page/index/index.js'],
         'list'              : ['./src/page/list/index.js'],
         'detail'            : ['./src/page/detail/index.js'],
-        // 'cart'              : ['./src/page/cart/index.js'],
+        'cart'              : ['./src/page/cart/index.js'],
         'user-login'        : ['./src/page/user-login/index.js'],
         'user-register'     : ['./src/page/user-register/index.js'],
         'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
@@ -93,7 +93,7 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
         new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
         new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
-        // new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+        new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
         new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
         new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
