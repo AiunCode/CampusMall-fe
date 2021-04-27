@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-24 15:46:22
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-27 17:03:12
+ * @LastEditTime: 2021-04-27 22:07:29
  * @Description: file content
  */
 var webpack = require('webpack');
@@ -19,6 +19,7 @@ var getHtmlConfig = function (name, title) {
         template: './src/view/' + name + '.html',
         //打包后的文件
         filename: 'view/' + name + '.html',
+        favicon: './favicon.ico',
         title: title,
         inject: true,
         hash: true,
@@ -45,13 +46,14 @@ var config = {
         'user-center'       : ['./src/page/user-center/index.js'],
         'user-center-update': ['./src/page/user-center-update/index.js'],
         'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
-        'result'            : ['./src/page/result/index.js']
+        'result'            : ['./src/page/result/index.js'],
+        'about'             : ['./src/page/about/index.js']
     },
     //输出路径
     //多个入口输出
     output: {
-        path: './dist',  //存放文件的路径
-        publicPath: '/dist', //访问的路径
+        path: __dirname + '/dist/',  //存放文件的路径
+        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.aiunmall.com/CampusMall-fe/dist/', //访问的路径
         filename: 'js/[name].js'
     },
     //把外部变量或模块引入
@@ -72,7 +74,14 @@ var config = {
             //处理图片和字体资源（icon）
             { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
             //处理后缀名为string的文件
-            { test: /\.string$/, loader: 'html-loader' }
+            { 
+                test: /\.string$/, 
+                loader: 'html-loader',
+                query: {
+                    minimize: true,
+                    removeAttributeQuotes: false
+                } 
+            }
         ]
     },
     //通过别名来把原导入路径映射成一个新的导入路径
@@ -108,7 +117,8 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
         new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
-        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果'))
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
+        new HtmlWebpackPlugin(getHtmlConfig('about', '关于我们'))
     ]
 };
 

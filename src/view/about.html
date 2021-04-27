@@ -1,0 +1,43 @@
+<!--
+ * @Author: aiun
+ * @Date: 2021-04-27 22:02:53
+ * @LastEditors: aiun
+ * @LastEditTime: 2021-04-27 22:05:42
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%= require('html-loader!./layout/head-common.html') %>
+        <title>
+            <%= htmlWebpackPlugin.options.title%> - CampusMall交易平台
+        </title>
+</head>
+
+<body>
+    <%= require('html-loader!./layout/nav.html') %>
+        <%= require('html-loader!./layout/header.html') %>
+            <div class="crumb">
+                <div class="w">
+                    <div class="crumb-con">
+                        <a class="link" href="./index.html">CampusMall</a>
+                        <span>></span>
+                        <span class="link-text">
+                            <%= htmlWebpackPlugin.options.title%>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="page-wrap w">
+                <div class="panel">
+                    <h1 class="panel-title">关于我们</h1>
+                    <div class="panel-body">
+                        欢迎访问CampusMall
+                    </div>
+                </div>
+            </div>
+            <%= require('html-loader!./layout/footer.html') %>
+</body>
+
+</html>
