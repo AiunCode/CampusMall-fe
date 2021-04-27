@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-26 00:59:49
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-26 01:00:16
+ * @LastEditTime: 2021-04-26 13:23:39
  * @Description: file content
  */
 'use strict';
@@ -129,7 +129,7 @@ var page = {
         $(document).on('click', '.btn-submit', function () {
             // 总价大于0，进行提交
             if (_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0) {
-                window.location.href = './confirm.html';
+                window.location.href = './order-confirm.html';
             } else {
                 _am.errorTips('请选择商品后再提交');
             }
