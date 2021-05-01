@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-26 13:25:28
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-27 16:09:05
+ * @LastEditTime: 2021-05-01 23:54:57
  * @Description: file content
  */
 'use strict';
@@ -75,6 +75,12 @@ var page = {
             }, function(errMsg){
                 _am.errorTips(errMsg);
             });
+            addressModal.show({
+                isUpdate: false,
+                onSuccess: function () {
+                    _this.loadAddressList();
+                },
+            });
         });
         // 地址的删除
         $(document).on('click', '.address-delete', function (e) {
@@ -92,17 +98,16 @@ var page = {
     // 加载地址列表
     loadAddressList: function () {
         var _this = this;
-        $('address-con').html('<div class="loading"></div>');
+        $('.address-con').html('<div class="loading"></div>');
         // 获取地址列表
         _address.getAddressList(function (res) {
             _this.addressFilter(res);
             // 渲染html
             var addressListHtml = _am.renderHtml(templateAddress, res);
             // 将渲染的html放到容器里
-            $('address-con').html(addressListHtml);
-            _this.renderCart(res);
+            $('.address-con').html(addressListHtml);
         }, function (errMsg) {
-            $('address-con').html('<p class="err-tip">地址加载失败，请刷新后重试</p>');
+            $('.address-con').html('<p class="err-tip">地址加载失败，请刷新后重试</p>');
         })
     },
     // 处理地址列表中选中状态
@@ -130,10 +135,9 @@ var page = {
             // 渲染html
             var productListHtml = _am.renderHtml(templateProduct, res);
             // 将渲染的html放到容器里
-            $('product-con').html(productListHtml);
-            _this.renderCart(res);
+            $('.product-con').html(productListHtml);
         }, function (errMsg) {
-            $('product-con').html('<p class="err-tip">商品信息加载失败，请刷新后重试</p>');
+            $('.product-con').html('<p class="err-tip">商品信息加载失败，请刷新后重试</p>');
         })
     }
 };
