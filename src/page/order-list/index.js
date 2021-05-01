@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-26 22:54:57
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-27 00:40:11
+ * @LastEditTime: 2021-05-02 00:17:55
  * @Description: file content
  */
 'use strict';
@@ -40,6 +40,7 @@ var page = {
         $listCon = $('.order-list-con');
         $listCon.html('<div class="loading"></div>');
         _order.getOrderList(this.data.listParam, function(res){
+            _this.dataFilter(res);
             // 渲染html
             orderListHtml = _am.renderHtml(templateIndex, res);
             $listCon.html(orderListHtml);
@@ -55,6 +56,10 @@ var page = {
         }, function(errMsg){
             $listCon.html('<p class="err-tip">加载订单失败，请刷新重试</p>');
         });
+    },
+    //数据的适配
+    dataFilter: function (data) {
+        data.isEmpty = !data.list.length;
     },
     // 加载分页信息
     loadPagination: function (pageInfo) {

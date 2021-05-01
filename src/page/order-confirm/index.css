@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-26 13:25:21
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-26 20:55:43
+ * @LastEditTime: 2021-05-02 00:25:36
  * @Description: file content
  */
 /* 收货地址样式 */
@@ -181,7 +181,7 @@
     outline: none;
     margin-right: 10px;
 }
-.form .form-line .btn{
+.form .form-line .address-btn{
     margin-left: 95px;
     height: 30px;
     line-height: 30px;

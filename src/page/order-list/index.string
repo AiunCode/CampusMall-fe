@@ -1,3 +1,10 @@
+<!--
+ * @Author: aiun
+ * @Date: 2021-04-28 13:14:41
+ * @LastEditors: aiun
+ * @LastEditTime: 2021-05-02 00:19:54
+ * @Description: file content
+-->
 <table class="order-list-table header">
     <tr>
         <th class="cell cell-img">&nbsp;</th>
@@ -22,7 +29,7 @@
                 <span>订单总价:</span>
                 <span class="order-total">{{payment}}</span>
             </span>
-            <a href="./order-detail.html?orderNumber={{{{orderNo}}}}" target="_blank" class="link order-detail">查看详情></a>
+            <a href="./order-detail.html?orderNumber={{orderNo}}" target="_blank" class="link order-detail">查看详情></a>
         </td>
     </tr>
     {{#orderItemVoList}}

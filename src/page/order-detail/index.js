@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-27 00:45:13
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-27 11:11:14
+ * @LastEditTime: 2021-05-02 00:09:24
  * @Description: file content
  */
 'use strict';
@@ -33,7 +33,7 @@ var page = {
     },
     bindEvent: function(){
         var _this = this;
-        $(document).on('click', 'order-cancel', function(){
+        $(document).on('click', '.order-cancel', function(){
             if(window.confirm('确定要取消该订单吗？')){
                 _order.cancelOrder(_this.data.orderNumber, function (res) {
                     _am.successTips('该订单取消成功！！！');
