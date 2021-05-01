@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-24 15:46:22
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-27 22:07:29
+ * @LastEditTime: 2021-05-01 12:23:28
  * @Description: file content
  */
 var webpack = require('webpack');
@@ -53,7 +53,7 @@ var config = {
     //多个入口输出
     output: {
         path: __dirname + '/dist/',  //存放文件的路径
-        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.aiunmall.com/CampusMall-fe/dist/', //访问的路径
+        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.igggo.vip/CampusMall-fe/dist/', //访问的路径
         filename: 'js/[name].js'
     },
     //把外部变量或模块引入
