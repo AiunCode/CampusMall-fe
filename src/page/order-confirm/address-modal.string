@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-line">
                     <input type="hidden" id="receiver-id" value="{{data.id}}" />
-                    <a class="address-btn">保存收货地址</a>
+                    <a class="btn address-btn">保存收货地址</a>
                 </div>
             </div>
         </div>
