@@ -2,7 +2,7 @@
  * @Author: aiun
  * @Date: 2021-04-26 00:59:49
  * @LastEditors: aiun
- * @LastEditTime: 2021-04-26 13:23:39
+ * @LastEditTime: 2021-05-02 16:18:08
  * @Description: file content
  */
 'use strict';
@@ -75,11 +75,11 @@ var page = {
                 type = $this.hasClass('plus') ? 'plus' : 'minus',
                 productId = $this.parents('.cart-table').data('product-id'),
                 minCount = 1,
-                maxCount = parseInt($pCount.data('max')),
+                maxCount = parseInt($pCount.data('stock')),
                 newCount = 0;
             if (type === 'plus') {
                 if (currCount >= maxCount) {
-                    _am.errorTips('该商品数量已达到上限');
+                    _am.errorTips('该商品库存不足,当前最多可买' + maxCount + '件该商品');
                     return;
                 }
                 newCount = currCount + 1;
@@ -131,13 +131,14 @@ var page = {
             if (_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0) {
                 window.location.href = './order-confirm.html';
             } else {
-                _am.errorTips('请选择商品后再提交');
+                _am.errorTips('请选择商品后再结算');
             }
         });
     },
     // 加载购物车信息
     loadCart: function () {
         var _this = this;
+        $('.page-wrap').html('<div class="loading"></div>');
         // 获取购物车列表
         _cart.getCartList(function (res) {
             _this.renderCart(res);
