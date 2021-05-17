@@ -44,10 +44,7 @@
                 <th class="cell-th cell-count">数量</th>
                 <th class="cell-th cell-total">小计</th>
             </tr>
-        </table>
-
-        <table class="order-list-table order-item">
-            
+            {{#orderItemVoList}}
             <tr>
                 <td class="cell cell-img">
                     <a href="./detail.html?productId={{productId}}" target="_blank" class="link">
