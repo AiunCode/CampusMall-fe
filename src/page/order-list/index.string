@@ -28,12 +28,12 @@
     {{#orderItemVoList}}
     <tr>
         <td class="cell cell-img">
-            <a href="./order-detail.html?productId={{productId}}" target="_blank" class="link">
+            <a href="./detail.html?productId={{productId}}" target="_blank" class="link">
                 <img src="{{imageHost}}{{productImage}}" alt="{{productName}}" class="p-img"/>
             </a>
         </td>
         <td class="cell cell-info">
-            <a href="./order-detail.html?productId={{productId}}" target="_blank" class="link">
+            <a href="./detail.html?productId={{productId}}" target="_blank" class="link">
                 {{productName}}
             </a>
         </td>
